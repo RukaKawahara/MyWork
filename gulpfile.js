@@ -8,17 +8,21 @@ const pug = require("gulp-pug");
 const browsersync = require("browser-sync");
 // gulpを使って画像を圧縮する
 const imagemin = require('gulp-imagemin');
+const mkdirp = require('mkdirp'); 
 
 /**
  * Sassをコンパイルするタスクです
  */
 const compileSass = () =>
+    // 出力先のディレクトリを作成
+    mkdirp.sync('dist/assets/css');
+
     // style.scssファイルを取得
     src("src/scss/*.scss")
         // コンパイル後のCSSを展開
         .pipe(sass({outputStyle: "expanded"}))
         // distフォルダー以下に保存
-        .pipe(dest("dist"))
+        .pipe(dest("dist/assets/css"))
         .pipe(browsersync.stream()); 
 
 /**
@@ -34,13 +38,16 @@ const compilePug = () =>
         .pipe(browsersync.stream()); 
 
 // pugファイルを監視
-const watchPugFiles = () => watch("src/pug/*.pug", compilePug);
+const watchPugFiles = () => watch("./src/pug/**/*.pug", compilePug);
 
 // 画像ファイルを圧縮してコピー
 const copyImages = () =>
-    src('src/img/*')
+    // 出力先のディレクトリを作成
+    mkdirp.sync('dist/assets/images');
+
+    src('src/images/*')
         .pipe(imagemin())
-        .pipe(dest("dist/img"))
+        .pipe(dest("dist/assets/images"))
         .pipe(browsersync.stream()); 
 
 // localサーバーを立ち上げる
