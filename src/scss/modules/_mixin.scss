@@ -1,0 +1,13 @@
+@use './vars' as var;
+
+@mixin sp-content {
+  @media screen and (max-width: var.$breakPoints) {
+    margin: 0 20px;
+  }
+}
+
+@mixin sp {
+  @media screen and (max-width: var.$breakPoints) {
+    @content;
+  }
+}

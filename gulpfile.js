@@ -13,42 +13,45 @@ const mkdirp = require('mkdirp');
 /**
  * Sassをコンパイルするタスクです
  */
-const compileSass = () =>
+const compileSass = () => {
     // 出力先のディレクトリを作成
     mkdirp.sync('dist/assets/css');
 
     // style.scssファイルを取得
-    src("src/scss/*.scss")
+    return src("src/scss/*.scss")
         // コンパイル後のCSSを展開
         .pipe(sass({outputStyle: "expanded"}))
         // distフォルダー以下に保存
         .pipe(dest("dist/assets/css"))
         .pipe(browsersync.stream()); 
+}
 
 /**
  * Sassファイルを監視し、変更があったらSassを変換します
  */
-const watchSassFiles = () => watch("src/scss/*.scss", compileSass);
+const watchSassFiles = () => watch("./src/scss/**/*.scss", compileSass);
 
 // pugをコンパイルする
-const compilePug = () =>
-    src("src/pug/*.pug")
+const compilePug = () => {
+    return src("src/pug/*.pug")
         .pipe(pug({pretty: true}))
         .pipe(dest("dist"))
-        .pipe(browsersync.stream()); 
+        .pipe(browsersync.stream())
+};
 
 // pugファイルを監視
 const watchPugFiles = () => watch("./src/pug/**/*.pug", compilePug);
 
 // 画像ファイルを圧縮してコピー
-const copyImages = () =>
+const copyImages = () => {
     // 出力先のディレクトリを作成
     mkdirp.sync('dist/assets/images');
 
-    src('src/images/*')
+    return src('src/images/*')
         .pipe(imagemin())
         .pipe(dest("dist/assets/images"))
         .pipe(browsersync.stream()); 
+}
 
 // localサーバーを立ち上げる
 const startServer = () =>

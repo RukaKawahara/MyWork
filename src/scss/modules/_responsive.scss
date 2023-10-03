@@ -1,0 +1,21 @@
+@use './vars' as var;
+
+/* パソコンで見た時はonlyPcのみ表示 */
+.onlyPc {
+  display: block;
+}
+
+.onlySp {
+  display: none;
+}
+
+/* スマホで見た時(1024px以下)はonlySpのみ表示 */
+@media screen and (max-width: var.$breakPoints) {
+  .onlyPc {
+    display: none;
+  }
+
+  .onlySp {
+    display: block;
+  }
+}
