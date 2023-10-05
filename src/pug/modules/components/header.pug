@@ -1,0 +1,32 @@
+- 
+  const linkInfo = [
+    {
+      id : "#about",
+      text: "About"
+    },
+    {
+      id : "#works",
+      text: "Works"
+    },
+    {
+      id : "#news",
+      text: "News"
+    },
+    {
+      id : "#contact",
+      text: "Contact"
+    },
+  ];
+
+
+header.header
+  .header__wrapper
+    h1.header__logo
+      img(src="./assets/images/logo.svg", alt="my-work", width=120, height=36)
+    nav.header__navigation
+      ul.header__list
+        each link in linkInfo
+          li.header__item 
+            a(href=link.id).header__link #{link.text}
+        li.header__item 
+          img.header__itemIcon(src="./assets/images/icon-instagram.png", alt="instagram" width=20, height=20)

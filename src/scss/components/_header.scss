@@ -1,0 +1,22 @@
+.header{
+  &__wrapper{
+    display: flex;
+    justify-content: space-between;
+    height: 270px;
+    max-width: 960px;
+    padding: 0 5.6%;
+    margin: 0 auto;
+    align-items: center;
+    background-color: aqua;
+  }
+
+  &__list {
+    display: flex;
+    gap: 30px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+  }
+}
