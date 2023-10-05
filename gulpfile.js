@@ -22,7 +22,7 @@ const compileSass = () => {
         // コンパイル後のCSSを展開
         .pipe(sass({outputStyle: "expanded"}))
         // distフォルダー以下に保存
-        .pipe(dest("dist/assets/css"))
+        .pipe(dest("./dist/assets/css/"))
         .pipe(browsersync.stream()); 
 }
 
@@ -35,7 +35,7 @@ const watchSassFiles = () => watch("./src/scss/**/*.scss", compileSass);
 const compilePug = () => {
     return src("src/pug/*.pug")
         .pipe(pug({pretty: true}))
-        .pipe(dest("dist"))
+        .pipe(dest("./dist/"))
         .pipe(browsersync.stream())
 };
 
@@ -49,16 +49,16 @@ const copyImages = () => {
 
     return src('src/images/*')
         .pipe(imagemin())
-        .pipe(dest("dist/assets/images"))
+        .pipe(dest("./dist/assets/images/"))
         .pipe(browsersync.stream()); 
 }
 
 // localサーバーを立ち上げる
 const startServer = () =>
-    browsersync({
+    browsersync.init({
         server:{
             baseDir: "./dist",
         }
     })
 
-exports.default = series(parallel(watchSassFiles, watchPugFiles, copyImages, startServer));
+exports.default = series(parallel(compilePug, compileSass, watchSassFiles, watchPugFiles, copyImages, startServer));
