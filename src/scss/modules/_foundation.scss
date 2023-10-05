@@ -13,9 +13,3 @@ li {
   list-style: none;
 }
 
-/* すべての要素のボックスモデルをborder-boxにする */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
