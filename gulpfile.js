@@ -61,4 +61,4 @@ const startServer = () =>
         }
     })
 
-exports.default = series(parallel(compilePug, compileSass, watchSassFiles, watchPugFiles, copyImages, startServer));
+exports.default = series(parallel(compilePug, compileSass, copyImages),startServer, watchSassFiles, watchPugFiles);
