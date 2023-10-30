@@ -11,3 +11,9 @@
     @content;
   }
 }
+
+@mixin content {
+  @media screen and (max-width: var.$breakPoints) {
+    margin: 0 20px;
+  }
+}

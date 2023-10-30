@@ -1,3 +1,5 @@
+@use '../modules/mixin' as mixin;
+
 .header{
   &__wrapper{
     display: flex;
@@ -7,12 +9,30 @@
     padding: 0 5.6%;
     margin: 0 auto;
     align-items: center;
-    background-color: aqua;
+    @include mixin.sp{
+      height: 82px;
+      justify-content: center;
+      flex-direction: column;
+    }
+  }
+
+  &__logo {
+    margin-top: 4px;
+  }
+
+  &__navigation {
+    @include mixin.sp {
+      font-size:12.8px;
+      padding-top: 6px;
+    }
   }
 
   &__list {
     display: flex;
     gap: 30px;
+    @include mixin.sp{
+      gap: 20px;
+    }
   }
 
   &__item {
