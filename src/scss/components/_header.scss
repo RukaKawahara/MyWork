@@ -1,7 +1,7 @@
 @use '../modules/mixin' as mixin;
 
 .header{
-  &__wrapper{
+  &__container{
     display: flex;
     justify-content: space-between;
     height: 270px;
