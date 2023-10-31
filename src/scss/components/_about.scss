@@ -1,0 +1,38 @@
+@use '../modules/mixin' as mixin;
+
+.about {
+  &__container {
+    max-width: 960px;
+    padding: 0 4.7%;
+    margin: 0 auto;
+    @include mixin.sp{
+      padding: 0 4.0%;
+    }
+  }
+
+  &__heading{
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 76px;
+  }
+
+  &__list {
+    margin-top: 61px;
+    @include mixin.sp{
+      margin-top: 36px;
+    }
+  }
+
+  &__item{
+    line-height: 1.1;
+    &:nth-child(2){
+      margin-top: 30px;
+    }
+  }
+
+  &__profileText {
+    margin-top: 26px;
+    line-height: 1.75;
+  }
+}
