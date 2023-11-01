@@ -1,0 +1,11 @@
+include ../../modules/_mixin.pug
+
+section.works
+  .works__container
+    +headingTitle("Works")
+    ul.works__list
+      - for (let i = 1; i <= 6; i++)
+        li.works__item
+          picture
+            source(media=`(min-width:${breakPoints}px)`, srcset=`./assets/images/works${i}.jpg`, alt=`works${i}`, width=264, height=172)
+            img.works__img(src=`./assets/images/works${i}.jpg`, alt=`works${i}`, width=345, height=225)

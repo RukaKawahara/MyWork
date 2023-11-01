@@ -1,0 +1,30 @@
+@use '../../modules/mixin' as mixin;
+.works {
+  &__container{
+    @include mixin.container;
+    margin-top: 76px;
+    padding: 0 4.6%;
+    @include mixin.sp{
+      padding: 0 4.0%;
+      margin-top: 59px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    margin-top: 104px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    @include mixin.sp{
+      grid-template-columns: 1fr;
+      margin-top: 35px;
+      gap: 23px;
+      width: 100%;
+    }
+  }
+
+  &__img{
+    width: 100%;
+    height: auto;
+  }
+}
