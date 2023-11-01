@@ -3,6 +3,7 @@
 .about {
   &__container {
     @include mixin.container;
+    margin-top: 76px;
     padding: 0 4.7%;
     @include mixin.sp{
       padding: 0 4.0%;
