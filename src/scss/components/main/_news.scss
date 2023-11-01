@@ -1,0 +1,49 @@
+@use '../../modules/mixin' as mixin;
+@use '../../modules/vars' as var;
+
+.news {
+  &__container{
+    @include mixin.container;
+    margin-top: 148px;
+    padding: 0 4.8%;
+    @include mixin.sp{
+      margin-top: 90px;
+    }
+  }
+
+  &__itemWrapper {
+    display: flex;
+    border-top:1px solid var.$gray-200;
+    padding: 14.2px 0px;
+    gap: 90px;
+    line-height: 1.1;
+    @include mixin.sp{
+      flex-direction: column;
+      gap:0;
+      padding: 12px 0;
+    }
+    &:first-child{
+      margin-top: 59px;
+      @include mixin.sp{
+        margin-top: 35px;
+      }
+    }
+    &:last-child{
+      border-bottom:1px solid var.$gray-200;
+    }
+  }
+
+  &__term {
+    margin-left: 12px;
+    @include mixin.sp{
+      margin-top: 3px;
+    }
+  }
+
+  &__description {
+    @include mixin.sp{
+      line-height: 1.5;
+      margin: -4px 0 0 12px; //下のスペースのみを広くするため実装
+    }
+  }
+}
