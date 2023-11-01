@@ -4,6 +4,6 @@
 @use 'modules/foundation';
 @use 'modules/responsive';
 @use 'components/header';
-@use 'components/mainvisual';
-@use 'components/about';
+@use 'components/main/mainvisual';
+@use 'components/main/about';
 @use 'components/title';

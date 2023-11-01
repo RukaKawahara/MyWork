@@ -17,3 +17,8 @@
     margin: 0 20px;
   }
 }
+
+@mixin container{
+  max-width: 960px;
+  margin: 0 auto;
+}
