@@ -5,9 +5,10 @@
   &__container{
     @include mixin.container;
     margin-top: 126px;
-    padding: 0 4%;
+    padding: 0 4.8%;
     @include mixin.sp{
       margin-top: 65px;
+      padding: 0 4.0%;
     }
   }
   &__form{
@@ -48,7 +49,7 @@
     }
   }
   &__button{
-    margin: 30px auto 0;
+    margin: 20px auto 0;
     display: block;
     padding: 10px 86px;
     background-color: var.$black-900;
