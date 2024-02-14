@@ -28,4 +28,7 @@ section.news
   .news__container
     +headingTitle("News")
     dl
-      each news in newsList        .news__itemWrapper          dt.news__term #{news.date}          dd.news__description #{news.description}
+      each news in newsList
+        .news__itemWrapper
+          dt.news__term #{news.date}
+          dd.news__description #{news.description}

@@ -1,1 +1,64 @@
-@use '../../modules/mixin' as mixin;@use '../../modules/vars' as var;.contact{  &__container{    @include mixin.container;    margin-top: 126px;    padding: 0 4%;    @include mixin.sp{      margin-top: 65px;    }  }  &__form{    display: flex;    flex-direction: column;    margin-top: 60px;    gap: 10px;    @include mixin.sp{      margin-top: 30px;      gap: 4px;    }  }  &__labelWrapper{    display: flex;    justify-content: space-between;    @include mixin.sp{      flex-direction: column;    }  }  &__label{    margin-top: -2px;    margin-left: -2px;    @include mixin.sp{      margin: 0;    }  }  &__inputArea{    width: 86%;    @include mixin.sp{      width: 100%;    }    &--input{      min-height:44px;    }    &--textarea{      min-height:160px;    }  }  &__button{    margin: 30px auto 0;    display: block;    padding: 10px 86px;    background-color: var.$black-900;    color: var.$white;    cursor: pointer;    @include mixin.sp{      margin-top: 24px;    }    &:hover{      background-color: var.$white;      color: var.$black-900;    }  }}
+@use '../../modules/mixin' as mixin;
+@use '../../modules/vars' as var;
+
+.contact{
+  &__container{
+    @include mixin.container;
+    margin-top: 126px;
+    padding: 0 4%;
+    @include mixin.sp{
+      margin-top: 65px;
+    }
+  }
+  &__form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+    gap: 10px;
+    @include mixin.sp{
+      margin-top: 30px;
+      gap: 4px;
+    }
+  }
+  &__labelWrapper{
+    display: flex;
+    justify-content: space-between;
+    @include mixin.sp{
+      flex-direction: column;
+    }
+  }
+  &__label{
+    margin-top: -2px;
+    margin-left: -2px;
+    @include mixin.sp{
+      margin: 0;
+    }
+  }
+  &__inputArea{
+    width: 86%;
+    @include mixin.sp{
+      width: 100%;
+    }
+    &--input{
+      min-height:44px;
+    }
+    &--textarea{
+      min-height:160px;
+    }
+  }
+  &__button{
+    margin: 30px auto 0;
+    display: block;
+    padding: 10px 86px;
+    background-color: var.$black-900;
+    color: var.$white;
+    cursor: pointer;
+    @include mixin.sp{
+      margin-top: 24px;
+    }
+    &:hover{
+      background-color: var.$white;
+      color: var.$black-900;
+    }
+  }
+}
