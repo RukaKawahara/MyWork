@@ -2,6 +2,17 @@ head
   meta(charset='UTF-8')
   meta(name='viewport', content='width=device-width, initial-scale=1.0')
   link(rel='stylesheet', href='./assets/css/common.css')
+  link(rel="icon", href="./assets/images/favicon.ico")
   title My Work
-  meta(name='description', content='')
-  meta(name='keywords', content='')
+  meta(name='description', content='練習用ページです')
+  meta(property="og:title" content="My Work")
+  meta(property="og:description" content="練習用ページです")
+  meta(property="og:image" content="https://practice-app-8b54e.web.app/assets/images/share.jpg")
+  meta(property="og:url" content="https://practice-app-8b54e.web.app")
+  meta(property="og:type" content="website")
+  script.
+    // 直接アクセスされた場合の処理
+    if (document.referrer === "") {
+      alert("認証画面に戻ります");
+      window.location.href = "https://practice-app-8b54e.web.app";
+    }
