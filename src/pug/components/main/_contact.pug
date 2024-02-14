@@ -1,0 +1,16 @@
+include ../../modules/_mixin.pug
+
+section.contact
+  .contact__container
+    +headingTitle("Contact")
+    form.contact__form(action="hoge.php" method="POST")
+      .contact__labelWrapper
+        label.contact__label(for="name") NAME
+        input.contact__inputArea.contact__inputArea--input(id="name", name="name", type="text", required)
+      .contact__labelWrapper
+        label.contact__label(for="email") E-mail
+        input.contact__inputArea.contact__inputArea--input(id="email", name="email", type="email", required)
+      .contact__labelWrapper
+        label.contact__label(for="message") MESSAGE
+        textarea.contact__inputArea.contact__inputArea--textarea(name="message", required)
+      button.contact__button(type="submit") 送信
